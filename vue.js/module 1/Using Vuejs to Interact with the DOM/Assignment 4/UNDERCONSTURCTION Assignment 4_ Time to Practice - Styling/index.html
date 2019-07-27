@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+        <div id="exercise">
+                <!-- 1) Start the Effect with the Button. The Effect should alternate the "highlight" or "shrink" class on each new setInterval tick (attach respective class to the div with id "effect" below) -->
+                <div>
+                  <button @click="startEffect">Start Effect</button>
+                  <div id="effect" :class="effectClass"></div>
+                </div>
+                <!-- 2) Create a couple of CSS classes and attach them via the array syntax -->
+                <div>
+                  <span v-if="userInputClass">I got class .{{ userInputClass }}</span>
+                  <span v-if="userInputClass === ''">I got no class :(</span></div>
+                <!-- 3) Let the user enter a class (create some example classes) and attach it -->
+                <div>
+                  <input v-model="userInputClass" type="text">
+                  <div :class="userInputClass"></div>
+                </div>
+                <!-- 4) Let the user enter a class and enter true/ false for another class (create some example classes) and attach the classes -->
+                <div>
+                  <input v-model="cssClass" type="text">
+                  <input v-model="applyCSSClass" type="text">
+                  <div :class="className"></div>
+                </div>
+                <!-- 5) Repeat 3) but now with values for styles (instead of class names). Attach the respective styles.  -->
+                <div>
+                  <input v-model="cssStyle" type="text">
+                  <div :style="cssStyle"></div>
+                </div>
+                <!-- 6) Create a simple progress bar with setInterval and style bindings. Start it by hitting the below button. -->
+              
+                <div class="row">
+                  <div class="col-md-4">
+                    <button class="btn btn-primary" v-on:click="startProgress">Start Progress</button>
+                    <div v-show="progress !== 0" class="progress">
+                      <div class="progress-bar bg-info" role="progressbar" :style="{width: progress + '%'}" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <script src="myscript.js"></script> 
+</body>
+</html>

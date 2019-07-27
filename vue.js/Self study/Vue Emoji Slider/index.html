@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+   
+    <script src="style.css"></script>
+
+</head>
+<body>
+    <div id="slider">
+	
+        <label for="range" :style="{color: getHappinessColor}">Happiness: {{val}}%</label>
+    
+        <input v-model="val" id="range" type="range" min=0 max=100>
+    
+        <div class="slider outer">
+            <label :style="{width: `${val}%`, borderRadius: greaterThanFifty, background: getSliderBackground}" for="range" aria-hidden="true" class="slider inner">
+                <span :style="{right: getPlacement}">{{getHappiness}}</span>
+            </label>
+        </div>
+        
+    </div> 
+    <script src="vue.js"></script>
+</body>
+</html>
